@@ -22,7 +22,7 @@ public class CustomPlayerMovement : MonoBehaviour {
 		blueTerrain.SetActive (true);
 
 		leftEye.backgroundColor = blue;
-		rightEye.backgroundColor = orange;
+		rightEye.backgroundColor = blue;
 	}
 	
 	// Update is called once per frame
