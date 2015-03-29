@@ -321,6 +321,10 @@ Prefab:
       propertyPath: blueTerrain
       value: 
       objectReference: {fileID: 857408929}
+    - target: {fileID: 8211972, guid: ca38543a387e75749890b11f515b2004, type: 2}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca38543a387e75749890b11f515b2004, type: 2}
   m_IsPrefabParent: 0
