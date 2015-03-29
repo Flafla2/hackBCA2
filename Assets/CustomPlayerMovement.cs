@@ -18,11 +18,13 @@ public class CustomPlayerMovement : MonoBehaviour {
 	public bool dead = false;
 
 	Vector3 startPos;
+	Quaternion startRot;
 	Vector3 deathPos;
 
 	// Use this for initialization
 	void Awake () {
 		startPos = transform.position;
+		startRot = transform.rotation;
 		controller = this.gameObject.GetComponent<OVRPlayerController>();
 
 		orangeTerrain.SetActive (false);
@@ -50,6 +52,7 @@ public class CustomPlayerMovement : MonoBehaviour {
 			
 			if (Input.GetAxis("Blink") > 0) {
 				transform.position = startPos;
+				transform.rotation = startRot;
 				dead = false;
 				controller.enabled = true;
 				controller.HaltUpdateMovement = false;
