@@ -70,6 +70,11 @@ public class CustomPlayerMovement : MonoBehaviour {
 			controller.HaltUpdateMovement = true;	
 			deathPos = this.transform.position;
 		}
+
+		if (other.gameObject.tag.Equals ("Bouncy")) {
+			controller.Bounce();
+		}
+
 	}
 
 

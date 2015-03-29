@@ -49,6 +49,11 @@ public class OVRPlayerController : MonoBehaviour
 	public float JumpForce = 0.3f;
 
 	/// <summary>
+	/// The force applied to the character when jumping.
+	/// </summary>
+	public float BounceForce = 2f;
+
+	/// <summary>
 	/// The rate of rotation when using a gamepad.
 	/// </summary>
 	public float RotationAmount = 1.5f;
@@ -345,6 +350,20 @@ public class OVRPlayerController : MonoBehaviour
 
 		return true;
 	}
+
+
+	/// <summary>
+	/// Bounce! Must be enabled manually.
+	/// </summary>
+	public bool Bounce()
+	{
+
+		
+		MoveThrottle += new Vector3(0, BounceForce, 0);
+		
+		return true;
+	}
+
 
 	/// <summary>
 	/// Stop this instance.

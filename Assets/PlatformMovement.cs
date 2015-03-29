@@ -51,6 +51,7 @@ public class PlatformMovement : MonoBehaviour {
 		float distCovered = (Time.time - startTime) * speed;
 		float fracJourney = distCovered / journeyLength;
 		transform.position = Vector3.Lerp (startMarker.position, endMarker.position, fracJourney);
+		
 		newX = this.transform.position.x;
 		newY = this.transform.position.y;
 		newZ = this.transform.position.z;
@@ -72,5 +73,7 @@ public class PlatformMovement : MonoBehaviour {
 			other.transform.parent=null;
 		}
 	}
+
+
 	
 }
