@@ -148,7 +148,7 @@ Material:
       data:
         first:
           name: _LightRad
-        second: 1.99000001
+        second: 2.5
       data:
         first:
           name: _Cylindrical
@@ -165,7 +165,7 @@ Material:
       data:
         first:
           name: _LightPos
-        second: {r: -28.2199993, g: 9.51000023, b: 0, a: 0}
+        second: {r: -24, g: 9.51000023, b: 0, a: 0}
       data:
         first:
           name: _EmissionColor
