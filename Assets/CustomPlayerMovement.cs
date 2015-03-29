@@ -62,6 +62,7 @@ public class CustomPlayerMovement : MonoBehaviour {
 				leftEye.backgroundColor = switchTo;
 				rightEye.backgroundColor = switchTo;
 				blinked = true;
+				controller.MoveThrottle = new Vector3(0,0,0);
 			}
 		}
 	}
@@ -90,6 +91,8 @@ public class CustomPlayerMovement : MonoBehaviour {
 
 
 		if (other.gameObject.tag.Equals ("Bouncy")) {
+			controller.MoveThrottle = new Vector3(0,0,0);
+			controller.FallSpeed = 0;
 			controller.Bounce();
 		}
 
