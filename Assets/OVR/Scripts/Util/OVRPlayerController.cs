@@ -78,7 +78,7 @@ public class OVRPlayerController : MonoBehaviour
 	/// </summary>
 	public bool useProfileData = true;
 
-	protected CharacterController Controller = null;
+	public CharacterController Controller = null;
 	protected OVRCameraRig CameraRig = null;
 
 	private float MoveScale = 1.0f;
@@ -231,9 +231,9 @@ public class OVRPlayerController : MonoBehaviour
 			MoveScale = 0.70710678f;
 
 		// No positional movement if we are in the air
-		if (!Controller.isGrounded)
+		/*if (!Controller.isGrounded)
 			MoveScale = 0.0f;
-
+		*/
 		MoveScale *= SimulationRate * Time.deltaTime;
 
 		// Compute this for key movement
