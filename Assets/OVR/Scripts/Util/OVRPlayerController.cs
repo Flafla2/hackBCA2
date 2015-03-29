@@ -21,6 +21,7 @@ limitations under the License.
 
 using UnityEngine;
 using System.Collections.Generic;
+using Blink.Hardware;
 
 /// <summary>
 /// Controls the player's movement in virtual reality.
@@ -203,7 +204,18 @@ public class OVRPlayerController : MonoBehaviour
 
 		if (predictedXZ != actualXZ)
 			MoveThrottle += (actualXZ - predictedXZ) / (SimulationRate * Time.deltaTime);
+
+        Vector3 v1 = moveDirection; v1.y = 0;
+        Vector3 v2 = transform.forward; v2.y = 0;
+        ArduinoFanInterface.UpdateArduino(PosNegAngle(v1, v2, Vector3.up), moveDirection.magnitude, false);
 	}
+
+    public static float PosNegAngle(Vector3 a1, Vector3 a2, Vector3 n)
+    {
+        float angle = Vector3.Angle(a1, a2);
+        float sign = Mathf.Sign(Vector3.Dot(n, Vector3.Cross(a1, a2)));
+        return angle * sign;
+    }
 
 	public virtual void UpdateMovement()
 	{

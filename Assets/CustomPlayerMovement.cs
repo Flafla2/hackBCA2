@@ -19,6 +19,8 @@ public class CustomPlayerMovement : MonoBehaviour {
 	Quaternion startRot;
 	Vector3 deathPos;
 
+    public Animator animator;
+
 	// Use this for initialization
 	void Awake () {
 		startPos = transform.position;
@@ -63,6 +65,7 @@ public class CustomPlayerMovement : MonoBehaviour {
 				controller.MoveThrottle = new Vector3(0,0,0);
 			}
 		}
+        animator.SetBool("Dead", dead);
 	}
 
 	void Blink() {

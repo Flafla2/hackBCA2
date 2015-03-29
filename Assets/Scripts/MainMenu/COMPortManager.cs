@@ -2,10 +2,16 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.IO.Ports;
+using Blink.Hardware;
 
 public class COMPortManager : MonoBehaviour {
 
-    public static string CurrentPort;
+    public static string _CurrentPort;
+    public static string CurrentPort
+    {
+        get { return _CurrentPort; }
+        set { _CurrentPort = value; ArduinoFanInterface.serial = new SerialPort(_CurrentPort, 9600); }
+    }
 
     public Transform ButtonHolder;
     public Transform ButtonPrefab;
