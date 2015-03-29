@@ -25,9 +25,14 @@ public class CustomPlayerMovement : MonoBehaviour {
 	Vector3 startPos;
 	Quaternion startRot;
 	Vector3 deathPos;
-
+	AudioSource audio;
+	float musicStart = 0.0f;
+	
+	
     public Animator animator;
-
+	void Start(){
+		PlayerPrefs.SetFloat ("Music Time", 0);
+	}
 	// Use this for initialization
 	void Awake () {
 		startPos = transform.position;
@@ -42,6 +47,8 @@ public class CustomPlayerMovement : MonoBehaviour {
 
 		leftEye.backgroundColor = blue;
 		rightEye.backgroundColor = blue;
+		audio = this.gameObject.GetComponentInChildren<AudioSource>();
+		audio.time = PlayerPrefs.GetFloat("Music Time");
 	}
 	
 	// Update is called once per frame
@@ -126,7 +133,9 @@ public class CustomPlayerMovement : MonoBehaviour {
 
 
 		if (other.gameObject.tag.Equals ("Portal")) {
+			PlayerPrefs.SetFloat("Music Time",audio.time);
 			Application.LoadLevel((Application.loadedLevel+1)%Application.levelCount);
+
 		}
 
 	}
