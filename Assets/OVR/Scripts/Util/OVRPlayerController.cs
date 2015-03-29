@@ -49,6 +49,11 @@ public class OVRPlayerController : MonoBehaviour
 	public float JumpForce = 0.3f;
 
 	/// <summary>
+	/// The force applied to the character when jumping.
+	/// </summary>
+	public float BounceForce = 2f;
+
+	/// <summary>
 	/// The rate of rotation when using a gamepad.
 	/// </summary>
 	public float RotationAmount = 1.5f;
@@ -89,7 +94,7 @@ public class OVRPlayerController : MonoBehaviour
 	private float MoveScaleMultiplier = 1.0f;
 	private float RotationScaleMultiplier = 1.0f;
 	private bool  SkipMouseRotation = false;
-	private bool  HaltUpdateMovement = false;
+	public bool  HaltUpdateMovement = false;
 	private bool prevHatLeft = false;
 	private bool prevHatRight = false;
 	private float SimulationRate = 60f;
@@ -341,10 +346,24 @@ public class OVRPlayerController : MonoBehaviour
 		if (!Controller.isGrounded)
 			return false;
 
-		MoveThrottle += new Vector3(.1f*Mathf.Sin(transform.rotation.eulerAngles.y*Mathf.PI/180), JumpForce, .1f*Mathf.Cos(transform.rotation.eulerAngles.y*Mathf.PI/180));
+		MoveThrottle += new Vector3(0.05f*Mathf.Sin(transform.rotation.eulerAngles.y*Mathf.PI/180), JumpForce, 0.05f*Mathf.Cos(transform.rotation.eulerAngles.y*Mathf.PI/180));
 
 		return true;
 	}
+
+
+	/// <summary>
+	/// Bounce! Must be enabled manually.
+	/// </summary>
+	public bool Bounce()
+	{
+
+		
+		MoveThrottle += new Vector3(0, BounceForce, 0);
+		
+		return true;
+	}
+
 
 	/// <summary>
 	/// Stop this instance.
