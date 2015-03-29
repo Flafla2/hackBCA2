@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Character
   - Deadly
+  - Portal
   layers:
   - Default
   - TransparentFX
