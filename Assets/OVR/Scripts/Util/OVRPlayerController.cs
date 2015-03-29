@@ -341,7 +341,7 @@ public class OVRPlayerController : MonoBehaviour
 		if (!Controller.isGrounded)
 			return false;
 
-		MoveThrottle += new Vector3(0, JumpForce, 0);
+		MoveThrottle += new Vector3(.1f*Mathf.Sin(transform.rotation.eulerAngles.y*Mathf.PI/180), JumpForce, .1f*Mathf.Cos(transform.rotation.eulerAngles.y*Mathf.PI/180));
 
 		return true;
 	}
