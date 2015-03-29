@@ -7,6 +7,7 @@ TagManager:
   - Bouncy
   - Character
   - Deadly
+  - Portal
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,8 @@ public class CustomPlayerMovement : MonoBehaviour {
 	public GameObject orangeTerrain;
 	public GameObject blueTerrain;
 
+	public int totalLevels;
+
 	public Camera leftEye, rightEye;
 	Color orange = new Color(1,0.65f,0);
 	Color blue = Color.cyan;
@@ -71,8 +73,14 @@ public class CustomPlayerMovement : MonoBehaviour {
 			deathPos = this.transform.position;
 		}
 
+
 		if (other.gameObject.tag.Equals ("Bouncy")) {
 			controller.Bounce();
+		}
+
+
+		if (other.gameObject.tag.Equals ("Portal")) {
+			Application.LoadLevel((Application.loadedLevel+1)%totalLevels);
 		}
 
 	}
