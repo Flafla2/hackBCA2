@@ -9,8 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 459026}
   - 33: {fileID: 3380698}
-  - 136: {fileID: 13664012}
   - 23: {fileID: 2316220}
+  - 95: {fileID: 9523392}
+  - 65: {fileID: 6504198}
   m_Layer: 0
   m_Name: OrangeBouncePad
   m_TagString: Bouncy
@@ -43,7 +44,7 @@ Transform:
   m_GameObject: {fileID: 169118}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .0250000004, y: .0250000004, z: .000124999991}
   m_Children: []
   m_Father: {fileID: 459026}
   m_RootOrder: 0
@@ -54,8 +55,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .230000004, y: .298000008, z: .0900000036}
-  m_LocalScale: {x: 1, y: .00999999978, z: 1}
+  m_LocalPosition: {x: -3.17000008, y: 1.33000004, z: -2.73000002}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 443302}
   m_Father: {fileID: 0}
@@ -70,14 +71,14 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: a2c30423892d26c4d967e642e9d82f07, type: 2}
+  - {fileID: 2100000, guid: 9bd17815678d2b648bed85f4fab21b24, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_ImportantGI: 0
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
@@ -90,9 +91,9 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124604}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!136 &13664012
-CapsuleCollider:
+  m_Mesh: {fileID: 4300000, guid: 441f596a426d4354e9cac09fbaa851bd, type: 3}
+--- !u!65 &6504198
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -100,10 +101,26 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Size: {x: .0220000073, y: .00194985571, z: .0219566002}
+  m_Center: {x: 3.25962901e-09, y: 5.82076609e-11, z: -3.7252903e-09}
+--- !u!95 &9523392
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124604}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 441f596a426d4354e9cac09fbaa851bd, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!198 &19898836
 ParticleSystem:
   m_ObjectHideFlags: 1
