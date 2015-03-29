@@ -112,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 163343834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: .589999974}
+  m_LocalPosition: {x: 0, y: 0, z: .370000005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1448266671}
@@ -266,7 +266,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 318888615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.36000001, y: 3.00999999, z: -.119999997}
+  m_LocalPosition: {x: -1.36000001, y: 3.00999999, z: -.0700000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -462,10 +462,11 @@ MonoBehaviour:
   worldInsideTransform: {fileID: 1448266671}
   worldOutsideTransform: {fileID: 786039912}
   changerTransform: {fileID: 318888616}
+  playerTransform: {fileID: 0}
   _State: 0
-  _Inverted: 1
   _ShaderName: BLINK/World Object
   _BorderColor: {r: 1, g: 0, b: 0, a: 1}
+  _BorderWidth: .100000001
   _PrimaryColor: 1
   _LightRadius: 1.00999999
 --- !u!4 &1155694301
@@ -645,7 +646,7 @@ Material:
       data:
         first:
           name: _LightPos
-        second: {r: -1.36000001, g: 3.00999999, b: -.119999997, a: 0}
+        second: {r: -1.36000001, g: 3.00999999, b: -.0700000003, a: 0}
       data:
         first:
           name: _EmissionColor
@@ -855,7 +856,7 @@ Material:
       data:
         first:
           name: _LightPos
-        second: {r: -1.36000001, g: 3.00999999, b: -.119999997, a: 0}
+        second: {r: -1.36000001, g: 3.00999999, b: -.0700000003, a: 0}
       data:
         first:
           name: _EmissionColor
