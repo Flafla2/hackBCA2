@@ -8,7 +8,7 @@ public class CustomPlayerMovement : MonoBehaviour {
 	public GameObject orangeTerrain;
 	public GameObject blueTerrain;
 
-	public int totalLevels;
+	int totalLevels = 2;
 
 	public Camera leftEye, rightEye;
 	Color orange = new Color(1,0.65f,0);
@@ -46,12 +46,19 @@ public class CustomPlayerMovement : MonoBehaviour {
 				blinked = false;
 			}
 		} else {
-			//transform.position = deathPos;
-			controller.HaltUpdateMovement = true;
+			transform.position = deathPos;
+			
 			if (Input.GetAxis("Blink") > 0) {
 				transform.position = startPos;
 				dead = false;
+				controller.enabled = true;
 				controller.HaltUpdateMovement = false;
+				orangeTerrain.SetActive(false);
+				blueTerrain.SetActive(true);
+				Color switchTo = (orangeTerrain.activeSelf ? orange : blue);
+				leftEye.backgroundColor = switchTo;
+				rightEye.backgroundColor = switchTo;
+				blinked = true;
 			}
 		}
 	}
@@ -67,10 +74,15 @@ public class CustomPlayerMovement : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag.Equals ("Deadly")) {
+			if (!dead) {
+				deathPos = this.transform.position;
+
+				print ("test");
+			}
 			dead = true;
 			print ("Dead");
-			controller.HaltUpdateMovement = true;	
-			deathPos = this.transform.position;
+			controller.HaltUpdateMovement = true;
+			controller.enabled = false;
 		}
 
 
