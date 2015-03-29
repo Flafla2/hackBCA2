@@ -15,12 +15,14 @@ public class CustomPlayerMovement : MonoBehaviour {
 	bool blinked = false;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		controller = this.gameObject.GetComponent<OVRPlayerController>();
 
 		orangeTerrain.SetActive (false);
 		blueTerrain.SetActive (true);
 
+		leftEye.backgroundColor = blue;
+		rightEye.backgroundColor = orange;
 	}
 	
 	// Update is called once per frame
