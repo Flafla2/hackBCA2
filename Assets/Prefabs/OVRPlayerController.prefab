@@ -151,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114116}
   m_LocalRotation: {x: 0, y: -.718141675, z: 0, w: .695896983}
-  m_LocalPosition: {x: 2.06999993, y: 1.87, z: .200000003}
+  m_LocalPosition: {x: 10.4099998, y: 1.42999995, z: -2.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 457520}
@@ -347,7 +347,7 @@ MonoBehaviour:
   Damping: .200000003
   BackAndSideDampen: .5
   JumpForce: .600000024
-  BounceForce: 2
+  BounceForce: 1.20000005
   RotationAmount: 2
   RotationRatchet: 45
   HmdResetsY: 1
@@ -355,6 +355,8 @@ MonoBehaviour:
   GravityModifier: .349999994
   useProfileData: 1
   Controller: {fileID: 0}
+  MoveThrottle: {x: 0, y: 0, z: 0}
+  FallSpeed: 0
   HaltUpdateMovement: 0
 --- !u!114 &11421364
 MonoBehaviour:

@@ -51,7 +51,7 @@ public class OVRPlayerController : MonoBehaviour
 	/// <summary>
 	/// The force applied to the character when jumping.
 	/// </summary>
-	public float BounceForce = 2f;
+	public float BounceForce = 1.2f;
 
 	/// <summary>
 	/// The rate of rotation when using a gamepad.
@@ -87,8 +87,8 @@ public class OVRPlayerController : MonoBehaviour
 	protected OVRCameraRig CameraRig = null;
 
 	private float MoveScale = 1.0f;
-	private Vector3 MoveThrottle = Vector3.zero;
-	private float FallSpeed = 0.0f;
+	public Vector3 MoveThrottle = Vector3.zero;
+	public float FallSpeed = 0.0f;
 	private OVRPose? InitialPose;
 	private float InitialYRotation = 0.0f;
 	private float MoveScaleMultiplier = 1.0f;
