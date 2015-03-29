@@ -15,12 +15,24 @@ public class CustomPlayerMovement : MonoBehaviour {
 	bool blinked = false;
 	public bool dead = false;
 
+    public Transform Grabbable;
+    public Renderer GrabbableRenderer;
+    public Transform ForwardVec;
+    public float GrabRange;
+    private bool Grabbing = false;
+    private Vector3 initialGrabPos;
+
 	Vector3 startPos;
 	Quaternion startRot;
 	Vector3 deathPos;
-
+	AudioSource audio;
+	float musicStart = 0.0f;
+	
+	
     public Animator animator;
-
+	void Start(){
+		PlayerPrefs.SetFloat ("Music Time", 0);
+	}
 	// Use this for initialization
 	void Awake () {
 		startPos = transform.position;
@@ -30,8 +42,13 @@ public class CustomPlayerMovement : MonoBehaviour {
 		orangeTerrain.SetActive (false);
 		blueTerrain.SetActive (true);
 
+        if(Grabbable != null)
+            initialGrabPos = Grabbable.position;
+
 		leftEye.backgroundColor = blue;
 		rightEye.backgroundColor = blue;
+		audio = this.gameObject.GetComponentInChildren<AudioSource>();
+		audio.time = PlayerPrefs.GetFloat("Music Time");
 	}
 	
 	// Update is called once per frame
@@ -40,7 +57,21 @@ public class CustomPlayerMovement : MonoBehaviour {
 			if (Input.GetAxis ("Jump") > 0) {
 				controller.Jump ();
 			}
-		
+
+            if (Grabbable != null)
+            {
+                bool InRange = (Grabbable.position - transform.position).sqrMagnitude < GrabRange * GrabRange;
+                bool Facing = Vector3.Dot((Grabbable.position - transform.position).normalized, ForwardVec.forward) > 0.7;
+                bool CanGrabOrb = InRange && Facing;
+                Debug.Log(CanGrabOrb + "");
+                if (!Grabbing && CanGrabOrb)
+                {
+                    Grabbing = true;
+                }
+                if (Grabbing)
+                      Grabbable.transform.position = transform.position + transform.forward;
+            }
+
 			if (!blinked && Input.GetAxis ("Blink") > 0) {
 				Blink ();
 				blinked = true;
@@ -86,6 +117,9 @@ public class CustomPlayerMovement : MonoBehaviour {
 			}
 			dead = true;
 			print ("Dead");
+            Grabbing = false;
+            if(Grabbable != null)
+                Grabbable.position = initialGrabPos;
 			controller.HaltUpdateMovement = true;
 			controller.enabled = false;
 		}
@@ -99,7 +133,9 @@ public class CustomPlayerMovement : MonoBehaviour {
 
 
 		if (other.gameObject.tag.Equals ("Portal")) {
+			PlayerPrefs.SetFloat("Music Time",audio.time);
 			Application.LoadLevel((Application.loadedLevel+1)%Application.levelCount);
+
 		}
 
 	}

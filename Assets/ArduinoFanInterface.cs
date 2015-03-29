@@ -31,6 +31,7 @@ namespace Blink.Hardware
 
         public static void UpdateArduino(float angle, float magnitude, bool rumble)
         {
+            if (serial == null) return;
             int fan = (int)(angle / 45);
             //Debug.Log(fan);
             if (serial.IsOpen == false)

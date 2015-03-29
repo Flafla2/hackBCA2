@@ -68,13 +68,18 @@ public class WorldObjectManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        bool PlayerInRange = (changerTransform.position - playerTransform.position).sqrMagnitude >= _LightRadius * _LightRadius;
+        PlayerDimension = PlayerInRange ? _PrimaryColor : (_PrimaryColor == Dimension.BLUE ? Dimension.ORANGE : Dimension.BLUE);
+        //Debug.Log(PlayerInRange + "");
         UpdateShaderParamsAll();
 	}
 
     private void UpdateShaderParamsAll()
     {
-        UpdateShaderParamsRecursive(worldInsideTransform, Dimension.BLUE);
-        UpdateShaderParamsRecursive(worldOutsideTransform, Dimension.ORANGE);
+        if(worldInsideTransform != null)
+            UpdateShaderParamsRecursive(worldInsideTransform, Dimension.BLUE);
+        if(worldOutsideTransform != null)
+            UpdateShaderParamsRecursive(worldOutsideTransform, Dimension.ORANGE);
     }
 
     private void UpdateShaderParamsRecursive(Transform t, Dimension dim)
@@ -106,11 +111,11 @@ public class WorldObjectManager : MonoBehaviour {
         mat.SetFloat("_BorderWidth", _BorderWidth);
 
         // Collision Code
-#if !UNITY_EDITOR
+//#if !UNITY_EDITOR
         BoxCollider box = obj.GetComponent<BoxCollider>();
         if (box != null)
             box.enabled = PlayerDimension == dim;
-#endif
+//#endif
     }
 
     void OnDrawGizmos()

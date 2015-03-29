@@ -639,7 +639,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 452102, guid: ca38543a387e75749890b11f515b2004, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11479270, guid: ca38543a387e75749890b11f515b2004, type: 2}
       propertyPath: orangeTerrain
