@@ -42,6 +42,7 @@ public class COMPortManager : MonoBehaviour {
         }
 
         string[] ports = SerialPort.GetPortNames();
+        
         foreach (string port in ports)
         {
             Transform c = Instantiate(ButtonPrefab) as Transform;

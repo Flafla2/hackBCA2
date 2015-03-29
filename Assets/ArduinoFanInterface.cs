@@ -25,13 +25,14 @@ namespace Blink.Hardware
                 Debug.LogError("Serial is null and we are trying to end the arduino!");
                 return;
             }
+            serial.Write("q");
             serial.Close();
         }
 
         public static void UpdateArduino(float angle, float magnitude, bool rumble)
         {
             int fan = (int)(angle / 45);
-            Debug.Log(fan);
+            //Debug.Log(fan);
             if (serial.IsOpen == false)
                 serial.Open();
 

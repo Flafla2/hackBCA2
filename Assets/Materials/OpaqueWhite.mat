@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: lambert1
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: OpaqueWhite
+  m_Shader: {fileID: 4800000, guid: c0e53030aa8731f468fe6def17ddc2ad, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -77,11 +77,22 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Albedo
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Cutoff
         second: .5
+      data:
+        first:
+          name: _Smoothness
+        second: .123000003
       data:
         first:
           name: _SrcBlend
@@ -130,11 +141,35 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _BorderWidth
+        second: 0
+      data:
+        first:
+          name: _LightRad
+        second: 1.99000001
+      data:
+        first:
+          name: _Cylindrical
+        second: 0
+      data:
+        first:
+          name: _TexturizerState
+        second: 1
+      data:
+        first:
+          name: _Inverted
+        second: 1
     m_Colors:
       data:
         first:
+          name: _LightPos
+        second: {r: -28.2199993, g: 9.51000023, b: 0, a: 0}
+      data:
+        first:
           name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _Color
@@ -143,3 +178,7 @@ Material:
         first:
           name: _EmissionColorUI
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _BorderColor
+        second: {r: 0, g: 0, b: 0, a: 0}

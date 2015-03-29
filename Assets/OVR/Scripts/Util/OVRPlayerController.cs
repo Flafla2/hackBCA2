@@ -207,7 +207,8 @@ public class OVRPlayerController : MonoBehaviour
 
         Vector3 v1 = moveDirection; v1.y = 0;
         Vector3 v2 = transform.forward; v2.y = 0;
-        ArduinoFanInterface.UpdateArduino(PosNegAngle(v1, v2, Vector3.up), moveDirection.magnitude, false);
+        //Debug.Log((PosNegAngle(v1, v2, Vector3.up) + 360) % 360 + "");
+        ArduinoFanInterface.UpdateArduino(360-(PosNegAngle(v1, v2, Vector3.up)+360)%360, moveDirection.magnitude, false);
 	}
 
     public static float PosNegAngle(Vector3 a1, Vector3 a2, Vector3 n)

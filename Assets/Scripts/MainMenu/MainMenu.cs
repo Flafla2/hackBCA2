@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Blink.Hardware;
 
 public class MainMenu : MonoBehaviour {
 
@@ -7,6 +8,7 @@ public class MainMenu : MonoBehaviour {
 
     public void ExitGame()
     {
+        ArduinoFanInterface.EndArduino();
         Application.Quit();
     }
 
