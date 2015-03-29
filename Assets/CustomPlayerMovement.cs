@@ -8,7 +8,7 @@ public class CustomPlayerMovement : MonoBehaviour {
 	public GameObject orangeTerrain;
 	public GameObject blueTerrain;
 
-	int totalLevels = 2;
+	int totalLevels = 3;
 
 	public Camera leftEye, rightEye;
 	Color orange = new Color(1,0.65f,0);
