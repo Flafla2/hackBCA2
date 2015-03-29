@@ -88,6 +88,98 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &438618230
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 857408930}
+    m_Modifications:
+    - target: {fileID: 445140, guid: 35bdfb82d3bb8514988293331c88d37d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445140, guid: 35bdfb82d3bb8514988293331c88d37d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445140, guid: 35bdfb82d3bb8514988293331c88d37d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445140, guid: 35bdfb82d3bb8514988293331c88d37d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445140, guid: 35bdfb82d3bb8514988293331c88d37d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445140, guid: 35bdfb82d3bb8514988293331c88d37d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445140, guid: 35bdfb82d3bb8514988293331c88d37d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 445140, guid: 35bdfb82d3bb8514988293331c88d37d, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 35bdfb82d3bb8514988293331c88d37d, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &438618231
+Transform:
+  m_PrefabParentObject: {fileID: 445140, guid: 35bdfb82d3bb8514988293331c88d37d, type: 2}
+  m_PrefabInternal: {fileID: 438618230}
+--- !u!1001 &527182793
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1035507252}
+    m_Modifications:
+    - target: {fileID: 440860, guid: 7ce80782b4ff7a54c96f4b1bad93e24e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440860, guid: 7ce80782b4ff7a54c96f4b1bad93e24e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440860, guid: 7ce80782b4ff7a54c96f4b1bad93e24e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440860, guid: 7ce80782b4ff7a54c96f4b1bad93e24e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440860, guid: 7ce80782b4ff7a54c96f4b1bad93e24e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440860, guid: 7ce80782b4ff7a54c96f4b1bad93e24e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440860, guid: 7ce80782b4ff7a54c96f4b1bad93e24e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440860, guid: 7ce80782b4ff7a54c96f4b1bad93e24e, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7ce80782b4ff7a54c96f4b1bad93e24e, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &527182794
+Transform:
+  m_PrefabParentObject: {fileID: 440860, guid: 7ce80782b4ff7a54c96f4b1bad93e24e, type: 2}
+  m_PrefabInternal: {fileID: 527182793}
 --- !u!1001 &542389400
 Prefab:
   m_ObjectHideFlags: 0
@@ -175,6 +267,7 @@ Transform:
   - {fileID: 1012370347}
   - {fileID: 2085109589}
   - {fileID: 1655923005}
+  - {fileID: 438618231}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1001 &965316315
@@ -332,6 +425,7 @@ Transform:
   - {fileID: 1882885409}
   - {fileID: 854198194}
   - {fileID: 1869101858}
+  - {fileID: 527182794}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1001 &1191778954
